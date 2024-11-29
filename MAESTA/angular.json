@@ -31,7 +31,6 @@
             ],
             "styles": [
               "src/bootstrap.min.css",
-              "src/bootstrap-icons.css",
               "src/style.scss"
             ],
             "scripts": [
