@@ -31,7 +31,6 @@
             ],
             "styles": [
               "src/bootstrap.min.css",
-              "src/style.scss"
             ],
             "scripts": [
               "src/bootstrap.bundle.min.js"
