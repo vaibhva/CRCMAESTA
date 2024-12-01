@@ -21,6 +21,7 @@ export class AppComponent {
   isFormSubmit:boolean = false;
   phonenumberDom!:any;
   nameDom!:any;
+  formError!:boolean;
 
   ngAfterViewInit(){
     const openModal = document.getElementById('openModal') as HTMLElement;
@@ -29,16 +30,19 @@ export class AppComponent {
     this.phonenumberDom = document.getElementById('phonenumber') as HTMLElement
   }
   submitEntry(): void{
-    //this.nameDom.value
-//this.phonenumberDom.value
-    emailjs.init({
-      publicKey: "wjDP7u11ItqBjFwaw",
-    });
-    emailjs.send("service_qncwc6c","template_hul3pkb",{
-      from_name: this.nameDom.value,
-      from_phonenumber: this.phonenumberDom.value,
+    if(this.nameDom.value && this.phonenumberDom.value){
+      this.formError = false;
+      emailjs.init({
+        publicKey: "wjDP7u11ItqBjFwaw",
       });
-    this.isFormSubmit = true;
+      emailjs.send("service_qncwc6c","template_hul3pkb",{
+        from_name: this.nameDom.value,
+        from_phonenumber: this.phonenumberDom.value,
+        });
+      this.isFormSubmit = true;  
+    }else{
+      this.formError = true;
+    }
   }
 
 }

@@ -42,6 +42,9 @@
                 <input type="number" id="phonenumber" class="form-control" X aria-label="phone number" placeholder="phone number"  required>
                 <div class="invalid-feedback" *ngIf="isFormSubmit">Please enter the phone number</div>
               </div>
+              <div *ngIf="formError" class="mt-2 mb-2 error">
+                Please enter required details
+              </div>
               <div class="mb-3">
                 <button class="btn btn-primary" type="submit" (click)="submitEntry()">Submit form</button>
               </div>  
